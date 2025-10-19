@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-g" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Last Archive</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'VT323', monospace;
+      }
+      @keyframes shake {
+        0%, 100% { transform: translateX(0); }
+        10%, 30%, 50%, 70%, 90% { transform: translateX(-2px); }
+        20%, 40%, 60%, 80% { transform: translateX(2px); }
+      }
+      .animate-shake {
+        animation: shake 0.75s infinite;
+      }
+      @keyframes skew {
+        0% { transform: skewX(0deg); }
+        25% { transform: skewX(2deg); }
+        50% { transform: skewX(0deg); }
+        75% { transform: skewX(-2deg); }
+        100% { transform: skewX(0deg); }
+      }
+      .animate-skew {
+        animation: skew 1.5s infinite;
+      }
+
+      /* --- VISUAL GLITCH LAYER --- */
+      /* 1. The "Broken Screen" Scanline Overlay */
+      #scanline-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: repeating-linear-gradient(
+          to bottom,
+          transparent 0px,
+          rgba(0, 255, 0, 0.05) 1px, /* Faint green lines */
+          rgba(0, 255, 0, 0.05) 2px,
+          transparent 2px,
+          transparent 4px
+        );
+        z-index: 1000; /* Must be on top of everything */
+        pointer-events: none; /* Lets the mouse click through it! */
+        /* Off by default */
+        display: none;
+      }
+
+      /* 2. The "Flicker" Glitch */
+      @keyframes flicker {
+        0% { opacity: 1; }
+        50% { opacity: 0.8; }
+        100% { opacity: 1; }
+      }
+
+      /* 3. JavaScript "Toggle" Classes */
+      /* We will add these classes to the with JS to turn glitches on/off */
+
+      /* Toggles the Scanlines ON */
+      body.scanlines-active #scanline-overlay {
+        display: block;
+      }
+
+      /* Toggles the Desktop Flicker ON */
+      body.flicker-active #desktop {
+        animation: flicker 0.1s infinite;
+      }
+
+      /* Toggles the Desktop Shake ON (uses keyframe from Prompt 1) */
+      body.shake-active #desktop {
+        animation: shake 0.75s infinite;
+      }
+
+      /* Toggles the Desktop Skew ON (uses keyframe from Prompt 1) */
+      body.skew-active #desktop {
+        animation: skew 4.5s infinite;
+      }
+
+      /* --- JS "JUICE" CSS --- */
+      @keyframes flicker-in {
+        0% { opacity: 0.5; }
+        25% { opacity: 1; }
+        50% { opacity: 0.7; }
+        75% { opacity: 1; }
+        100% { opacity: 1; }
+      }
+
+      .window-open {
+        animation: flicker-in 0.2s linear;
+      }
+
+      .title-bar {
+        cursor: grab; /* Shows the user it's draggable */
+      }
+
+      .title-bar:active {
+        cursor: grabbing;
+      }
+      
+      /* --- THE PHYSICAL BEZEL (FIX) --- */
+      /* This is the OUTER plastic casing */
+      #monitor-bezel {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        /* This padding creates the thick plastic border */
+        padding: 25px;
+
+        background-color: #1a1a1a; /* Dark, grimy plastic grey */
+        border: 3px solid #333;
+        border-radius: 15px; /* Old CRT monitors had curved edges */
+
+        /* This shadow makes it look like a real, physical object */
+        box-shadow:
+          0 0 30px rgba(0, 255, 0, 0.2), /* Green glow on the wall */
+          inset 0 0 10px #000; /* Inner shadow */
+      }
+
+      /* This is the "sunk-in" CRT glass screen */
+      #crt-glass {
+        width: 95vw;
+        height: 90vh;
+        background-color: #000; /* The black of the screen */
+
+        /* This is the "sunk-in" effect */
+        box-shadow: inset 0 0 15px 5px rgba(0, 0, 0, 0.7);
+        border-radius: 10px; /* The glass itself is slightly curved */
+        overflow: hidden; /* Clips the desktop content */
+        position: relative;
+      }
+
+      /* This adds the "grime", "vignette" AND colored lines on top of the glass */
+      #crt-glass::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        
+        /* Layered background: colored lines on top of grime/vignette */
+        background:
+          /* Layer 1: Animated Colored Lines */
+          linear-gradient(
+            to bottom,
+            transparent 15%,
+            rgba(170, 0, 255, 0.25) 15.2%,
+            rgba(0, 170, 255, 0.25) 15.4%,
+            transparent 15.6%,
+            transparent 40%,
+            rgba(255, 255, 255, 0.2) 40.1%,
+            transparent 40.2%,
+            transparent 65%,
+            rgba(170, 0, 255, 0.2) 65.2%,
+            transparent 65.3%,
+            transparent 80%,
+            rgba(0, 170, 255, 0.3) 80.1%,
+            rgba(255, 255, 255, 0.2) 80.2%,
+            transparent 80.4%
+          ),
+          /* Layer 2: Static Grime/Vignette */
+          radial-gradient(ellipse at center, transparent 60%, rgba(0,0,0,0.4) 100%),
+          url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAANElEQVR42mP4z8BQ/A/F0AANAwBDAwBDAwBDAwBDAwBDAwBDAwBDAwBDAwBDAwBDgLU3AABRAZvEcml2rAAAAABJRU5ErkJggg==');
+
+        opacity: 0.9; /* Increased opacity for a stronger effect */
+        pointer-events: none; /* Click through it */
+        z-index: 1501; /* High z-index */
+        animation: glitch-lines-scroll 1.2s linear infinite; /* Animate the lines */
+      }
+      
+      /* --- PERMANENT SUBTLE GLITCH ON CRT GLASS --- */
+      #crt-glass::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: repeating-linear-gradient(
+          transparent 0px,
+          transparent 3px,
+          rgba(0, 255, 0, 0.03) 4px, /* Very faint green lines */
+          rgba(0, 255, 0, 0.03) 5px
+        );
+        background-size: 100% 5px; /* Adjust line spacing */
+        animation: subtle-vhs-scroll 0.5s linear infinite;
+        opacity: 0.9; /* Adjust overall intensity */
+        z-index: 1500; /* On top of desktop, below colored lines/popups */
+        pointer-events: none; /* Crucial: Allows clicks to pass through */
+      }
+
+
+      /* This is our ACTUAL desktop, living inside the "glass" */
+      #desktop {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        /* This padding keeps icons from touching the "sunk-in" shadow */
+        padding: 10px;
+        box-sizing: border-box;
+      }
+      
+      /* --- NEW Mini CRT Window Styling --- */
+      .window {
+        background-color: #1a1a1a !important; /* Bezel color */
+        border: 2px solid #333 !important; /* Bezel edge */
+        border-radius: 10px; /* Curved corners */
+        padding: 3px;
+        box-shadow: 0 0 20px rgba(0,255,0,0.1), inset 0 0 8px #000;
+      }
+      .window .title-bar {
+        background-color: #004d00 !important; /* Dark green title */
+        color: #66ff66 !important;
+        border-bottom: 2px solid #333;
+        border-radius: 6px 6px 0 0;
+      }
+      /* The "screen" of the mini-crt window */
+      .window > .flex-grow {
+        background-color: #000;
+        border-radius: 5px;
+        box-shadow: inset 0 0 10px 3px rgba(0,0,0,0.7);
+        position: relative;
+      }
+      /* Vignette for the mini-crt window */
+      .window > .flex-grow::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: radial-gradient(ellipse at center, transparent 70%, rgba(0,0,0,0.5) 100%);
+        pointer-events: none;
+        z-index: 10;
+        border-radius: 5px;
+      }
+
+
+      /* --- Terminal Message Styling --- */
+      .terminal-msg.system {
+        color: #f59e0b; /* Amber color for system status */
+      }
+      .terminal-msg.player {
+         color: #a3e635; /* Brighter lime for player input */
+      }
+      .terminal-msg.ai {
+        /* Default text color is fine for AI */
+      }
+      .victory-cat {
+        font-family: 'monospace', 'Courier New', Courier;
+        line-height: 1.1;
+        color: #00FFFF; /* Cyan victory color */
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+
+      /* --- CUSTOM SCROLLBAR --- */
+      #terminal-log::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      #terminal-log::-webkit-scrollbar-track {
+        background: #111;
+      }
+
+      #terminal-log::-webkit-scrollbar-thumb {
+        background-color: #005000; /* Dark green */
+        border-radius: 4px;
+        border: 1px solid #00FF00; /* Bright green border */
+      }
+
+      #terminal-log::-webkit-scrollbar-thumb:hover {
+        background-color: #008000;
+      }
+
+      /* --- FINALE / BUG HUNT MINIGAME --- */
+      #desktop.frozen {
+        filter: grayscale(50%) blur(1px);
+        pointer-events: none;
+      }
+      #desktop.frozen * {
+        pointer-events: none;
+      }
+      .bug {
+        position: absolute;
+        font-size: 24px;
+        cursor: pointer;
+        user-select: none;
+        z-index: 10000;
+        pointer-events: auto; /* Make it clickable over the frozen desktop */
+        text-shadow: 0 0 5px rgba(0, 255, 0, 0.7);
+        transition: transform 0.1s ease-out;
+      }
+      .bug:hover {
+        transform: scale(1.5);
+      }
+      
+      /* --- POPUP HELL --- */
+      .popup-window {
+        position: absolute;
+        background-color: #280000; /* Dark, dark red */
+        border: 2px solid #ff0000;
+        border-radius: 10px;
+        box-shadow: 0 0 25px rgba(255, 0, 0, 0.5), inset 0 0 10px #000;
+        padding: 3px;
+        z-index: 20000;
+        color: #fdd; /* Pale red/off-white text */
+        font-family: 'VT323', monospace;
+      }
+      .popup-title-bar {
+        background-color: #aa0000; /* Bright red */
+        color: white;
+        padding: 2px 4px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 2px solid #ff0000;
+        border-radius: 6px 6px 0 0;
+      }
+      .popup-content {
+        padding: 15px;
+        background-color: #1a0000;
+        border-radius: 5px;
+        box-shadow: inset 0 0 10px 3px rgba(0,0,0,0.7);
+        position: relative; /* For button positioning */
+      }
+      .popup-close-button {
+        position: absolute;
+        background-color: #330000;
+        border: 2px solid #ff0000;
+        color: #fdd;
+        border-radius: 5px;
+        padding: 2px 10px;
+        cursor: pointer;
+        font-family: 'VT323', monospace;
+        transition: background-color 0.2s;
+      }
+      .popup-close-button:hover {
+        background-color: #550000;
+      }
+      .popup-close-button:active {
+        background-color: #770000;
+      }
+      .popup-error-icon {
+        display: inline-block;
+        width: 32px;
+        height: 32px;
+        background-color: #ff0000;
+        color: white;
+        border-radius: 50%;
+        text-align: center;
+        font-weight: bold;
+        font-family: 'VT323', monospace;
+        font-size: 24px;
+        line-height: 32px;
+        margin-right: 10px;
+        flex-shrink: 0;
+        border: 2px solid white;
+      }
+      @keyframes popup-close-flash {
+        0%, 100% { border-color: #ff0000; }
+        50% { border-color: #ffffff; opacity: 0.5; }
+      }
+      .popup-window.is-closing {
+        animation: popup-close-flash 0.3s linear;
+      }
+
+
+      /* --- FINALE GLITCHES --- */
+      body.cursor-glitch {
+        cursor: wait !important;
+      }
+      .bug-swarm {
+         background-color: white !important;
+         transition: background-color 1s ease-in;
+      }
+
+      #crt-glass.glitch-invert {
+        filter: invert(1);
+      }
+
+      #crt-glass.glitch-shake {
+        animation: shake 0.75s infinite;
+      }
+
+      #crt-glass.glitch-skew {
+        animation: skew 1.5s infinite;
+      }
+
+      @keyframes static-noise {
+        0%, 100% { background-position: 0 0; }
+        10% { background-position: -5% -10%; }
+        20% { background-position: -15% 5%; }
+        30% { background-position: 7% -25%; }
+        40% { background-position: 20% 25%; }
+        50% { background-position: -25% 10%; }
+        60% { background-position: 15% 5%; }
+        70% { background-position: 0 15%; }
+        80% { background-position: 25% 35%; }
+        90% { background-position: -10% 10%; }
+      }
+      #crt-glass.glitch-static::after {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAUVBMVEWFhYWDg4N3d3dtbW17e3t1dXVuZmaPe2iOjeD///8/Pz9aWlpsbGxMSkpDQ0NBPjxtaGxAHjEdTEMUHx8gJyczMTSDg4N3d3dtbW17e3t1dXVuZmaPe2iOjeD///8/Pz9aWlpsbGxMSkpDQ0NBPjxtaGxAHjEdTEMUHx8gJyczMTSDg4N3d3dtbW17e3t1dXVuZmaPe2iOjeD///8/Pz9aWlpsbGxMSkpDQ0NBPjxtaGxAHjEdTEMUHx8gJyczMTSDg4N3d3dtbW17e3t1dXVuZmaPe2iOjeD///8/Pz9aWlpsbGxMSkpDQ0NBPjxtaGxAHjEdTEMUHx8gJyczMTSDg4N3d3dtbW17e3t1dXVuZmaPe2iOjeD///8/Pz9aWlpsbGxMSkpDQ0NBPjxtaGxAHjEdTEMUHx8gJyczMTSDg4N3d3dtbW17e3t1dXVuZmaPe2iOjeD///8/Pz9aWlpsbGxMSkpDQ0NBPjxtaGxAHjEdTEMUHx8gJyczMTSDg4N3d3dtbW17e3t1dXVuZmaPe2iOjeD///8/Pz9aWlpsbGxMSkpDQ0NBPjxtaGxAHjEdTEMUHx8gJyczMTSDg4N3d3dtbW1t7e3t1dXV3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3-iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAANElEQVR42mP4z8BQ/A/F0AANAwBDAwBDAwBDAwBDAwBDAwBDAwBDAwBDAwBDAwBDgLU3AABRAZvEcml2rAAAAABJRU5ErkJggg==');
+        opacity: 0.15;
+        z-index: 1502; /* Ensure this is on top of other permanent effects */
+        pointer-events: none;
+        animation: static-noise 0.2s steps(4) infinite;
+      }
+
+      @keyframes tear-anim {
+        0%, 100% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+        25% { clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 80%); }
+        50% { clip-path: polygon(0 20%, 100% 0, 100% 80%, 0 100%); }
+        75% { clip-path: polygon(0 80%, 100% 80%, 100% 20%, 0 20%); }
+      }
+      #crt-glass.glitch-tear {
+        animation: tear-anim 0.45s linear;
+      }
+      
+      @keyframes glitch-lines-scroll {
+        from {
+          background-position-y: 0;
+        }
+        to {
+          background-position-y: -10px; /* A slow, subtle scroll */
+        }
+      }
+
+      /* Keyframes for Option 1: Subtle Scanline Scroll */
+      @keyframes subtle-vhs-scroll {
+        from { background-position-y: 0; }
+        to { background-position-y: -5px; } /* Scrolls one line height */
+      }
+
+      /* --- PROMPT 6.1: SAD CAT GAME OVER POPUP --- */
+      .game-over-popup {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 10000; /* Sit on top of everything */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgba(0, 0, 0, 0.9); /* Black background with opacity */
+        backdrop-filter: blur(5px); /* Optional blur effect */
+        -webkit-backdrop-filter: blur(5px); /* Safari support */
+        color: #00FF00; /* Green text */
+        text-align: center;
+        padding-top: 50px;
+      }
+      .game-over-popup .popup-content {
+        margin: auto;
+        padding: 20px;
+        width: 90%;
+        max-width: 600px;
+        background-color: rgba(10, 20, 10, 0.8); /* Slightly lighter dark green */
+        border: 2px solid #00FF00;
+        box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+      }
+      .game-over-popup .cat-ascii {
+        font-family: 'monospace', 'Courier New', Courier; /* Essential for ASCII art */
+        font-size: 16px; /* Adjust size to fit */
+        line-height: 1; /* Tighter lines */
+        white-space: pre; /* Preserves spaces/line breaks */
+        color: #00FF00;
+        margin-bottom: 20px;
+      }
+      .game-over-popup .popup-message {
+        font-size: 1.8em;
+        margin-bottom: 10px;
+        color: #FF0000; /* Red for alert */
+        text-shadow: 0 0 5px #FF0000;
+      }
+      .game-over-popup .popup-submessage {
+        font-size: 1.2em;
+        color: #00FF00;
+      }
+
+    </style>
+
+<link rel="stylesheet" href="/index.css">
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>
+  <script type="module" crossorigin src="/The-Last-Archive/assets/index-yHyz-Wyu.js"></script>
+</head>
+  <body>
+    <div id="root"></div>
+    <div id="scanline-overlay"></div>
+    
+    <div id="sad-cat-popup" class="game-over-popup">
+      <div class="popup-content">
+        <pre class="cat-ascii">
+／＞　 フ
+| 　_　_|
+／` ミ＿xノ
+/　　　　 |
+/　 ヽ　　 ﾉ
+│　　|　|　|
+／￣|　　 |　|　|
+(￣ヽ＿ヽ)__)
+＼二)
+        </pre>
+        <p class="popup-message">SYSTEM OFFLINE. ARCHIVE LOST. MEOW...</p>
+        <p class="popup-submessage">Rebooting primary core...</p>
+      </div>
+    </div>
+    
+  </body>
+</html>
