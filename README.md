@@ -60,13 +60,27 @@ All non-verification-critical interactions are logged in **Firestore**, while th
 
 **Prerequisites:**  
 
+* Node.js ≥ 18
 
+* npm ≥ 9
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Setup Instructions
+
+```bash
+# Clone the repository
+git clone https://github.com/ANewShaman/ChronosLedger.git
+cd ChronosLedger
+
+# Install dependencies
+npm install
+
+# Set up environment variables
+# Open .env.local and add your Gemini API key like this:
+# GEMINI_API_KEY=your_api_key_here
+
+# Run the app
+npm run dev
+```
 
 ## Important Notes!
 
