@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chronos Ledger</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"></script>
+    <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+    <!-- The redundant ethers.js script tag below has been removed to prevent conflicts with the importmap version. -->
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "/react-dom@^19.2.0/",
+    "react/": "/react@^19.2.0/",
+    "react": "/react@^19.2.0",
+    "firebase/": "/firebase@^12.4.0/",
+    "ethers": "/ethers@^6.15.0",
+    "@google/genai": "/@google/genai@^1.27.0",
+    "html5-qrcode": "/html5-qrcode@^2.3.8"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-gray-100">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

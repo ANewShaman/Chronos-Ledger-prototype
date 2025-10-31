@@ -1,0 +1,5 @@
+{
+  "name": "Check copy of Chronos Ledger !",
+  "description": "A simple web application to register and verify product authenticity using a decentralized ledger concept, built with React and Firebase.",
+  "requestFramePermissions": []
+}

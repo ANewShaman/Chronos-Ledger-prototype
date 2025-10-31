@@ -1,0 +1,502 @@
+export const historicalCsvData = `ProductName,BatchID,MfgDate,Location,Status
+Essential Medicine X,BCH-Q3-DELTA-402,2024-02-08,DELTA,Flagged-Temp
+ImmunoBoost 500mg,IB-500-112,2023-08-25,N/A,Recalled
+CardioCare Plus,CCP-OMEGA-2024-055,2023-06-19,OMEGA,Under Investigation
+CardioCare Plus,CCP-ALPHA-2024-571,2024-10-15,ALPHA,Normal
+Essential Medicine X,BCH-Q2-DELTA-642,2023-04-18,DELTA,Normal
+ImmunoBoost 500mg,IB-500-988,2023-06-27,N/A,Normal
+ImmunoBoost 500mg,IB-500-374,2023-02-15,N/A,Normal
+CardioCare Plus,CCP-ALPHA-2023-855,2023-05-22,ALPHA,Normal
+ImmunoBoost 500mg,IB-500-265,2025-07-09,N/A,Normal
+ImmunoBoost 500mg,IB-500-289,2025-10-21,N/A,Normal
+CardioCare Plus,CCP-OMEGA-2023-537,2023-01-19,OMEGA,Normal
+ImmunoBoost 500mg,IB-500-890,2024-01-31,N/A,Normal
+CardioCare Plus,CCP-ALPHA-2025-234,2025-04-14,ALPHA,Normal
+ImmunoBoost 500mg,IB-500-464,2023-03-07,N/A,Normal
+Essential Medicine X,BCH-Q1-GAMMA-598,2023-05-17,GAMMA,Normal
+CardioCare Plus,CCP-ALPHA-2025-541,2025-07-23,ALPHA,Normal
+Essential Medicine X,BCH-Q2-DELTA-955,2025-04-16,DELTA,Normal
+Essential Medicine X,BCH-Q4-GAMMA-672,2025-09-26,GAMMA,Normal
+Essential Medicine X,BCH-Q1-GAMMA-701,2025-06-09,GAMMA,Normal
+CardioCare Plus,CCP-ALPHA-2025-864,2025-05-28,ALPHA,Normal
+CardioCare Plus,CCP-OMEGA-2023-440,2023-05-12,OMEGA,Normal
+ImmunoBoost 500mg,IB-500-914,2023-08-01,N/A,Normal
+CardioCare Plus,CCP-ALPHA-2023-547,2023-11-16,ALPHA,Normal
+Essential Medicine X,BCH-Q1-GAMMA-481,2023-08-10,GAMMA,Normal
+Essential Medicine X,BCH-Q3-ALPHA-230,2025-06-10,ALPHA,Normal
+ImmunoBoost 500mg,IB-500-169,2025-04-18,N/A,Normal
+CardioCare Plus,CCP-OMEGA-2025-810,2025-09-15,OMEGA,Normal
+ImmunoBoost 500mg,IB-500-744,2024-12-13,N/A,Normal
+CardioCare Plus,CCP-ALPHA-2024-407,2024-01-18,ALPHA,Normal
+CardioCare Plus,CCP-ALPHA-2025-135,2025-01-06,ALPHA,Normal
+ImmunoBoost 500mg,IB-500-278,2024-11-19,N/A,Normal
+ImmunoBoost 500mg,IB-500-174,2025-01-02,N/A,Normal
+CardioCare Plus,CCP-ALPHA-2024-476,2024-01-16,ALPHA,Normal
+Essential Medicine X,BCH-Q1-ALPHA-211,2025-06-24,ALPHA,Normal
+ImmunoBoost 500mg,IB-500-573,2025-05-12,N/A,Normal
+ImmunoBoost 500mg,IB-500-254,2025-02-10,N/A,Normal
+Essential Medicine X,BCH-Q2-GAMMA-723,2024-05-08,GAMMA,Normal
+Essential Medicine X,BCH-Q2-ALPHA-940,2025-05-28,ALPHA,Normal
+Essential Medicine X,BCH-Q4-GAMMA-770,2024-11-08,GAMMA,Normal
+ImmunoBoost 500mg,IB-500-985,2023-06-23,N/A,Normal
+CardioCare Plus,CCP-OMEGA-2025-163,2025-09-04,OMEGA,Normal
+ImmunoBoost 500mg,IB-500-835,2024-02-19,N/A,Normal
+ImmunoBoost 500mg,IB-500-535,2023-10-11,N/A,Normal
+Essential Medicine X,BCH-Q2-GAMMA-355,2024-08-07,GAMMA,Normal
+ImmunoBoost 500mg,IB-500-557,2024-07-18,N/A,Normal
+CardioCare Plus,CCP-OMEGA-2023-575,2023-07-06,OMEGA,Normal
+CardioCare Plus,CCP-OMEGA-2023-284,2023-10-19,OMEGA,Normal
+CardioCare Plus,CCP-ALPHA-2025-742,2025-07-31,ALPHA,Normal
+CardioCare Plus,CCP-ALPHA-2024-840,2024-05-31,ALPHA,Normal
+Essential Medicine X,BCH-Q1-ALPHA-434,2025-08-06,ALPHA,Normal
+ImmunoBoost 500mg,IB-500-590,2025-10-17,N/A,Normal
+Essential Medicine X,BCH-Q1-DELTA-902,2024-11-18,DELTA,Normal
+CardioCare Plus,CCP-ALPHA-2023-830,2023-11-20,ALPHA,Normal
+CardioCare Plus,CCP-ALPHA-2023-551,2023-09-11,ALPHA,Normal
+Essential Medicine X,BCH-Q4-DELTA-925,2023-06-20,DELTA,Normal
+Essential Medicine X,BCH-Q1-ALPHA-246,2023-04-03,ALPHA,Normal
+CardioCare Plus,CCP-OMEGA-2025-489,2025-04-30,OMEGA,Normal
+CardioCare Plus,CCP-ALPHA-2024-837,2024-05-29,ALPHA,Normal
+CardioCare Plus,CCP-OMEGA-2024-762,2024-11-19,OMEGA,Normal
+CardioCare Plus,CCP-ALPHA-2023-210,2023-08-07,ALPHA,Normal
+Essential Medicine X,BCH-Q3-ALPHA-119,2024-03-15,ALPHA,Normal
+CardioCare Plus,CCP-ALPHA-2024-313,2024-06-05,ALPHA,Normal
+Essential Medicine X,BCH-Q3-DELTA-667,2024-06-20,DELTA,Normal
+ImmunoBoost 500mg,IB-500-168,2025-07-24,N/A,Normal
+ImmunoBoost 500mg,IB-500-550,2025-02-26,N/A,Normal
+ImmunoBoost 500mg,IB-500-349,2024-07-19,N/A,Normal
+ImmunoBoost 500mg,IB-500-498,2025-07-10,N/A,Normal
+CardioCare Plus,CCP-ALPHA-2023-307,2023-11-03,ALPHA,Normal
+Essential Medicine X,BCH-Q4-GAMMA-342,2025-07-07,GAMMA,Normal
+Essential Medicine X,BCH-Q3-ALPHA-890,2024-07-29,ALPHA,Normal
+ImmunoBoost 500mg,IB-500-132,2023-02-02,N/A,Normal
+CardioCare Plus,CCP-ALPHA-2024-615,2024-06-27,ALPHA,Normal
+Essential Medicine X,BCH-Q2-ALPHA-666,2025-01-09,ALPHA,Normal
+Essential Medicine X,BCH-Q4-GAMMA-284,2023-05-26,GAMMA,Normal
+ImmunoBoost 500mg,IB-500-476,2023-05-08,N/A,Normal
+ImmunoBoost 500mg,IB-500-258,2023-07-26,N/A,Normal
+ImmunoBoost 500mg,IB-500-967,2023-08-10,N/A,Normal
+CardioCare Plus,CCP-OMEGA-2025-668,2025-05-26,OMEGA,Normal
+ImmunoBoost 500mg,IB-500-293,2025-01-07,N/A,Normal
+CardioCare Plus,CCP-OMEGA-2024-957,2024-08-14,OMEGA,Normal
+ImmunoBoost 500mg,IB-500-443,2024-06-28,N/A,Normal
+ImmunoBoost 500mg,IB-500-736,2025-09-02,N/A,Normal
+CardioCare Plus,CCP-OMEGA-2024-235,2024-07-30,OMEGA,Normal
+CardioCare Plus,CCP-ALPHA-2023-819,2023-12-29,ALPHA,Normal
+Essential Medicine X,BCH-Q2-ALPHA-409,2023-01-13,ALPHA,Normal
+ImmunoBoost 500mg,IB-500-119,2025-03-10,N/A,Normal
+CardioCare Plus,CCP-ALPHA-2024-356,2024-08-23,ALPHA,Normal
+CardioCare Plus,CCP-OMEGA-2025-437,2025-10-20,OMEGA,Normal
+CardioCare Plus,CCP-ALPHA-2023-985,2023-06-15,ALPHA,Normal
+CardioCare Plus,CCP-OMEGA-2024-226,2024-08-22,OMEGA,Normal
+Essential Medicine X,BCH-Q1-DELTA-862,2024-07-10,DELTA,Normal
+ImmunoBoost 500mg,IB-500-385,2025-07-09,N/A,Normal
+ImmunoBoost 500mg,IB-500-515,2024-02-23,N/A,Normal
+ImmunoBoost 500mg,IB-500-680,2023-12-07,N/A,Normal
+ImmunoBoost 500mg,IB-500-416,2025-01-10,N/A,Normal
+ImmunoBoost 500mg,IB-500-538,2025-10-06,N/A,Normal
+ImmunoBoost 500mg,IB-500-211,2023-01-17,N/A,Normal
+CardioCare Plus,CCP-OMEGA-2024-847,2024-11-11,OMEGA,Normal
+CardioCare Plus,CCP-OMEGA-2023-418,2023-07-04,OMEGA,Normal
+CardioCare Plus,CCP-ALPHA-2024-610,2024-01-29,ALPHA,Normal
+CardioCare Plus,CCP-ALPHA-2024-404,2024-05-09,ALPHA,Normal
+Essential Medicine X,BCH-Q2-DELTA-586,2023-04-14,DELTA,Normal
+Essential Medicine X,BCH-Q2-GAMMA-532,2024-10-15,GAMMA,Normal
+CardioCare Plus,CCP-OMEGA-2023-327,2023-10-27,OMEGA,Normal
+Essential Medicine X,BCH-Q4-GAMMA-454,2024-05-07,GAMMA,Normal
+CardioCare Plus,CCP-ALPHA-2024-970,2024-08-26,ALPHA,Normal
+ImmunoBoost 500mg,IB-500-524,2023-05-03,N/A,Normal
+CardioCare Plus,CCP-OMEGA-2025-128,2025-08-05,OMEGA,Normal
+CardioCare Plus,CCP-ALPHA-2023-733,2023-07-18,ALPHA,Normal
+ImmunoBoost 500mg,IB-500-126,2023-10-31,N/A,Normal
+Essential Medicine X,BCH-Q1-DELTA-557,2024-09-03,DELTA,Normal
+Essential Medicine X,BCH-Q4-GAMMA-375,2024-12-23,GAMMA,Normal
+Essential Medicine X,BCH-Q4-DELTA-243,2024-01-15,DELTA,Normal
+ImmunoBoost 500mg,IB-500-189,2025-05-28,N/A,Normal
+Essential Medicine X,BCH-Q1-ALPHA-386,2024-06-13,ALPHA,Normal
+CardioCare Plus,CCP-OMEGA-2025-145,2025-06-13,OMEGA,Normal
+CardioCare Plus,CCP-OMEGA-2024-242,2024-04-05,OMEGA,Normal
+CardioCare Plus,CCP-ALPHA-2023-499,2023-03-16,ALPHA,Normal
+ImmunoBoost 500mg,IB-500-885,2025-01-13,N/A,Normal
+Essential Medicine X,BCH-Q1-ALPHA-856,2023-06-06,ALPHA,Normal
+CardioCare Plus,CCP-ALPHA-2025-213,2025-02-14,ALPHA,Normal
+Essential Medicine X,BCH-Q4-DELTA-214,2025-10-14,DELTA,Normal
+ImmunoBoost 500mg,IB-500-845,2024-12-11,N/A,Normal
+ImmunoBoost 500mg,IB-500-733,2025-07-18,N/A,Normal
+CardioCare Plus,CCP-OMEGA-2024-829,2024-02-28,OMEGA,Normal
+CardioCare Plus,CCP-OMEGA-2023-337,2023-07-19,OMEGA,Normal
+CardioCare Plus,CCP-OMEGA-2023-691,2023-11-09,OMEGA,Normal
+ImmunoBoost 500mg,IB-500-761,2025-04-21,N/A,Normal
+CardioCare Plus,CCP-OMEGA-2023-173,2023-08-02,OMEGA,Normal
+CardioCare Plus,CCP-ALPHA-2023-431,2023-05-22,ALPHA,Normal
+Essential Medicine X,BCH-Q4-ALPHA-895,2024-10-22,ALPHA,Normal
+CardioCare Plus,CCP-OMEGA-2024-867,2024-12-25,OMEGA,Normal
+Essential Medicine X,BCH-Q2-ALPHA-815,2023-05-25,ALPHA,Normal
+Essential Medicine X,BCH-Q4-DELTA-330,2025-07-10,DELTA,Normal
+Essential Medicine X,BCH-Q2-GAMMA-719,2023-10-02,GAMMA,Normal
+Essential Medicine X,BCH-Q4-GAMMA-516,2023-06-30,GAMMA,Normal
+ImmunoBoost 500mg,IB-500-829,2025-09-15,N/A,Normal
+Essential Medicine X,BCH-Q4-ALPHA-288,2023-10-17,ALPHA,Normal
+CardioCare Plus,CCP-ALPHA-2025-119,2025-10-15,ALPHA,Normal
+Essential Medicine X,BCH-Q4-DELTA-808,2023-11-13,DELTA,Normal
+ImmunoBoost 500mg,IB-500-490,2025-09-03,N/A,Normal
+Essential Medicine X,BCH-Q4-DELTA-360,2025-08-13,DELTA,Normal
+ImmunoBoost 500mg,IB-500-857,2024-06-26,N/A,Normal
+Essential Medicine X,BCH-Q4-ALPHA-446,2023-11-15,ALPHA,Normal
+CardioCare Plus,CCP-OMEGA-2024-295,2024-12-24,OMEGA,Normal
+CardioCare Plus,CCP-ALPHA-2023-875,2023-09-19,ALPHA,Normal
+CardioCare Plus,CCP-OMEGA-2024-293,2024-08-06,OMEGA,Normal
+CardioCare Plus,CCP-OMEGA-2025-645,2025-10-06,OMEGA,Normal
+Essential Medicine X,BCH-Q4-DELTA-391,2023-02-28,DELTA,Normal
+ImmunoBoost 500mg,IB-500-383,2025-06-23,N/A,Normal
+ImmunoBoost 500mg,IB-500-146,2024-12-24,N/A,Normal
+ImmunoBoost 500mg,IB-500-823,2024-10-14,N/A,Normal
+ImmunoBoost 500mg,IB-500-435,2025-09-22,N/A,Normal
+ImmunoBoost 500mg,IB-500-499,2025-05-07,N/A,Normal
+CardioCare Plus,CCP-OMEGA-2025-624,2025-05-01,OMEGA,Normal
+CardioCare Plus,CCP-ALPHA-2023-115,2023-08-10,ALPHA,Normal
+ImmunoBoost 500mg,IB-500-440,2023-10-11,N/A,Normal
+Essential Medicine X,BCH-Q1-DELTA-208,2025-10-07,DELTA,Normal
+ImmunoBoost 500mg,IB-500-212,2025-07-24,N/A,Normal
+Essential Medicine X,BCH-Q1-ALPHA-227,2023-08-08,ALPHA,Normal
+CardioCare Plus,CCP-ALPHA-2025-931,2025-06-25,ALPHA,Normal
+CardioCare Plus,CCP-ALPHA-2025-837,2025-01-15,ALPHA,Normal
+Essential Medicine X,BCH-Q1-GAMMA-247,2024-11-27,GAMMA,Normal
+ImmunoBoost 500mg,IB-500-106,2024-04-30,N/A,Normal
+Essential Medicine X,BCH-Q2-GAMMA-112,2023-03-09,GAMMA,Normal
+CardioCare Plus,CCP-ALPHA-2024-794,2024-10-16,ALPHA,Normal
+Essential Medicine X,BCH-Q3-GAMMA-424,2024-11-05,GAMMA,Normal
+CardioCare Plus,CCP-OMEGA-2023-527,2023-03-09,OMEGA,Normal
+Essential Medicine X,BCH-Q4-ALPHA-732,2023-09-05,ALPHA,Normal
+CardioCare Plus,CCP-ALPHA-2025-532,2025-01-16,ALPHA,Normal
+ImmunoBoost 500mg,IB-500-411,2023-05-26,N/A,Normal
+ImmunoBoost 500mg,IB-500-233,2023-07-20,N/A,Normal
+ImmunoBoost 500mg,IB-500-287,2023-06-21,N/A,Normal
+ImmunoBoost 500mg,IB-500-116,2025-06-06,N/A,Normal
+ImmunoBoost 500mg,IB-500-798,2025-09-03,N/A,Normal
+CardioCare Plus,CCP-OMEGA-2024-819,2024-02-29,OMEGA,Normal
+Essential Medicine X,BCH-Q4-ALPHA-137,2023-06-09,ALPHA,Normal
+ImmunoBoost 500mg,IB-500-872,2024-10-14,N/A,Normal
+CardioCare Plus,CCP-ALPHA-2023-628,2023-08-01,ALPHA,Normal
+ImmunoBoost 500mg,IB-500-450,2024-08-19,N/A,Normal
+ImmunoBoost 500mg,IB-500-113,2023-01-20,N/A,Normal
+CardioCare Plus,CCP-OMEGA-2023-209,2023-09-01,OMEGA,Normal
+Essential Medicine X,BCH-Q1-DELTA-360,2024-10-01,DELTA,Normal
+ImmunoBoost 500mg,IB-500-659,2024-10-25,N/A,Normal
+Essential Medicine X,BCH-Q4-ALPHA-114,2023-02-15,ALPHA,Normal
+CardioCare Plus,CCP-OMEGA-2023-888,2023-03-07,OMEGA,Normal
+ImmunoBoost 500mg,IB-500-381,2024-01-24,N/A,Normal
+ImmunoBoost 500mg,IB-500-521,2023-07-27,N/A,Normal
+ImmunoBoost 500mg,IB-500-993,2023-07-24,N/A,Normal
+CardioCare Plus,CCP-OMEGA-2023-676,2023-05-11,OMEGA,Normal
+Essential Medicine X,BCH-Q4-ALPHA-557,2023-01-26,ALPHA,Normal
+Essential Medicine X,BCH-Q2-GAMMA-277,2024-08-06,GAMMA,Normal
+CardioCare Plus,CCP-OMEGA-2025-450,2025-07-11,OMEGA,Normal
+CardioCare Plus,CCP-ALPHA-2023-653,2023-12-22,ALPHA,Normal
+CardioCare Plus,CCP-OMEGA-2023-442,2023-03-01,OMEGA,Normal
+ImmunoBoost 500mg,IB-500-473,2024-02-09,N/A,Normal
+ImmunoBoost 500mg,IB-500-397,2025-02-11,N/A,Normal
+CardioCare Plus,CCP-ALPHA-2024-919,2024-08-27,ALPHA,Normal
+Essential Medicine X,BCH-Q1-DELTA-280,2024-10-23,DELTA,Normal
+ImmunoBoost 500mg,IB-500-793,2023-06-29,N/A,Normal
+ImmunoBoost 500mg,IB-500-711,2024-03-06,N/A,Normal
+CardioCare Plus,CCP-ALPHA-2023-853,2023-10-30,ALPHA,Normal
+Essential Medicine X,BCH-Q4-GAMMA-492,2025-05-27,GAMMA,Normal
+CardioCare Plus,CCP-OMEGA-2023-123,2023-12-08,OMEGA,Normal
+Essential Medicine X,BCH-Q2-ALPHA-181,2024-07-23,ALPHA,Normal
+Essential Medicine X,BCH-Q1-ALPHA-282,2023-11-22,ALPHA,Normal
+ImmunoBoost 500mg,IB-500-470,2024-03-06,N/A,Normal
+ImmunoBoost 500mg,IB-500-619,2025-10-10,N/A,Normal
+CardioCare Plus,CCP-ALPHA-2024-251,2024-06-26,ALPHA,Normal
+CardioCare Plus,CCP-OMEGA-2024-451,2024-06-17,OMEGA,Normal
+CardioCare Plus,CCP-ALPHA-2023-880,2023-10-05,ALPHA,Normal
+Essential Medicine X,BCH-Q1-DELTA-803,2025-09-23,DELTA,Normal
+Essential Medicine X,BCH-Q3-ALPHA-556,2024-01-08,ALPHA,Normal
+ImmunoBoost 500mg,IB-500-178,2024-04-16,N/A,Normal
+ImmunoBoost 500mg,IB-500-546,2025-07-11,N/A,Normal
+Essential Medicine X,BCH-Q2-DELTA-360,2024-09-19,DELTA,Normal
+CardioCare Plus,CCP-ALPHA-2023-309,2023-11-29,ALPHA,Normal
+Essential Medicine X,BCH-Q1-ALPHA-738,2023-03-10,ALPHA,Normal
+Essential Medicine X,BCH-Q3-GAMMA-557,2024-06-19,GAMMA,Normal
+ImmunoBoost 500mg,IB-500-468,2024-08-02,N/A,Normal
+CardioCare Plus,CCP-ALPHA-2024-669,2024-08-23,ALPHA,Normal
+Essential Medicine X,BCH-Q4-GAMMA-452,2024-08-29,GAMMA,Normal
+CardioCare Plus,CCP-ALPHA-2025-287,2025-09-17,ALPHA,Normal
+ImmunoBoost 500mg,IB-500-759,2024-04-12,N/A,Normal
+Essential Medicine X,BCH-Q1-DELTA-630,2023-07-19,DELTA,Normal
+Essential Medicine X,BCH-Q2-ALPHA-899,2024-11-08,ALPHA,Normal
+ImmunoBoost 500mg,IB-500-390,2025-05-01,N/A,Normal
+CardioCare Plus,CCP-ALPHA-2024-382,2024-12-12,ALPHA,Normal
+ImmunoBoost 500mg,IB-500-138,2024-08-20,N/A,Normal
+Essential Medicine X,BCH-Q2-ALPHA-405,2024-02-01,ALPHA,Normal
+CardioCare Plus,CCP-ALPHA-2025-141,2025-07-02,ALPHA,Normal
+CardioCare Plus,CCP-OMEGA-2023-955,2023-02-07,OMEGA,Normal
+ImmunoBoost 500mg,IB-500-548,2025-05-30,N/A,Normal
+ImmunoBoost 500mg,IB-500-842,2024-07-15,N/A,Normal
+CardioCare Plus,CCP-OMEGA-2024-568,2024-09-26,OMEGA,Normal
+ImmunoBoost 500mg,IB-500-774,2024-02-06,N/A,Normal
+CardioCare Plus,CCP-OMEGA-2024-496,2024-06-19,OMEGA,Normal
+ImmunoBoost 500mg,IB-500-787,2023-10-04,N/A,Normal
+Essential Medicine X,BCH-Q2-DELTA-706,2025-09-17,DELTA,Normal
+Essential Medicine X,BCH-Q4-DELTA-955,2024-10-28,DELTA,Normal
+ImmunoBoost 500mg,IB-500-305,2023-06-21,N/A,Normal
+Essential Medicine X,BCH-Q1-GAMMA-410,2025-06-12,GAMMA,Normal
+CardioCare Plus,CCP-OMEGA-2023-849,2023-04-28,OMEGA,Normal
+ImmunoBoost 500mg,IB-500-299,2024-06-21,N/A,Normal
+ImmunoBoost 500mg,IB-500-756,2025-05-27,N/A,Normal
+Essential Medicine X,BCH-Q1-ALPHA-389,2023-03-16,ALPHA,Normal
+CardioCare Plus,CCP-ALPHA-2023-146,2023-09-26,ALPHA,Normal
+ImmunoBoost 500mg,IB-500-621,2023-09-06,N/A,Normal
+CardioCare Plus,CCP-OMEGA-2023-298,2023-08-10,OMEGA,Normal
+ImmunoBoost 500mg,IB-500-794,2023-07-14,N/A,Normal
+CardioCare Plus,CCP-OMEGA-2025-267,2025-08-15,OMEGA,Normal
+CardioCare Plus,CCP-ALPHA-2024-294,2024-05-09,ALPHA,Normal
+CardioCare Plus,CCP-ALPHA-2023-534,2023-02-23,ALPHA,Normal
+ImmunoBoost 500mg,IB-500-605,2023-11-07,N/A,Normal
+Essential Medicine X,BCH-Q3-DELTA-872,2025-07-15,DELTA,Normal
+ImmunoBoost 500mg,IB-500-340,2023-06-13,N/A,Normal
+CardioCare Plus,CCP-OMEGA-2023-825,2023-10-17,OMEGA,Normal
+CardioCare Plus,CCP-OMEGA-2024-158,2024-03-19,OMEGA,Normal
+CardioCare Plus,CCP-OMEGA-2024-997,2024-10-02,OMEGA,Normal
+Essential Medicine X,BCH-Q4-ALPHA-767,2025-05-05,ALPHA,Normal
+CardioCare Plus,CCP-OMEGA-2023-600,2023-11-09,OMEGA,Normal
+Essential Medicine X,BCH-Q2-GAMMA-490,2024-03-22,GAMMA,Normal
+Essential Medicine X,BCH-Q4-ALPHA-249,2025-09-26,ALPHA,Normal
+ImmunoBoost 500mg,IB-500-320,2023-06-06,N/A,Normal
+ImmunoBoost 500mg,IB-500-271,2025-06-05,N/A,Normal
+CardioCare Plus,CCP-OMEGA-2023-710,2023-12-05,OMEGA,Normal
+CardioCare Plus,CCP-OMEGA-2023-395,2023-07-13,OMEGA,Normal
+Essential Medicine X,BCH-Q4-ALPHA-379,2024-07-01,ALPHA,Normal
+CardioCare Plus,CCP-ALPHA-2025-360,2025-06-23,ALPHA,Normal
+CardioCare Plus,CCP-ALPHA-2024-157,2024-03-21,ALPHA,Normal
+Essential Medicine X,BCH-Q2-GAMMA-488,2024-07-22,GAMMA,Normal
+ImmunoBoost 500mg,IB-500-478,2025-09-15,N/A,Normal
+ImmunoBoost 500mg,IB-500-325,2025-10-08,N/A,Normal
+Essential Medicine X,BCH-Q3-ALPHA-390,2023-04-26,ALPHA,Normal
+CardioCare Plus,CCP-OMEGA-2024-742,2024-07-19,OMEGA,Normal
+ImmunoBoost 500mg,IB-500-257,2023-08-28,N/A,Normal
+CardioCare Plus,CCP-OMEGA-2023-942,2023-01-06,OMEGA,Normal
+Essential Medicine X,BCH-Q4-GAMMA-786,2025-10-08,GAMMA,Normal
+ImmunoBoost 500mg,IB-500-853,2023-04-24,N/A,Normal
+CardioCare Plus,CCP-OMEGA-2023-822,2023-11-14,OMEGA,Normal
+CardioCare Plus,CCP-OMEGA-2023-558,2023-10-12,OMEGA,Normal
+Essential Medicine X,BCH-Q4-DELTA-831,2025-05-19,DELTA,Normal
+CardioCare Plus,CCP-ALPHA-2023-994,2023-01-31,ALPHA,Normal
+ImmunoBoost 500mg,IB-500-446,2025-06-10,N/A,Normal
+ImmunoBoost 500mg,IB-500-903,2023-03-14,N/A,Normal
+ImmunoBoost 500mg,IB-500-111,2023-10-30,N/A,Normal
+ImmunoBoost 500mg,IB-500-103,2023-10-16,N/A,Normal
+CardioCare Plus,CCP-ALPHA-2025-763,2025-03-21,ALPHA,Normal
+Essential Medicine X,BCH-Q2-GAMMA-708,2024-11-15,GAMMA,Normal
+CardioCare Plus,CCP-OMEGA-2023-271,2023-12-14,OMEGA,Normal
+Essential Medicine X,BCH-Q4-DELTA-222,2023-08-17,DELTA,Normal
+Essential Medicine X,BCH-Q2-ALPHA-277,2025-03-28,ALPHA,Normal
+CardioCare Plus,CCP-ALPHA-2023-609,2023-08-18,ALPHA,Normal
+Essential Medicine X,BCH-Q4-DELTA-667,2023-09-08,DELTA,Normal
+CardioCare Plus,CCP-ALPHA-2023-453,2023-04-28,ALPHA,Normal
+ImmunoBoost 500mg,IB-500-951,2023-06-16,N/A,Normal
+Essential Medicine X,BCH-Q1-GAMMA-363,2025-06-05,GAMMA,Normal
+Essential Medicine X,BCH-Q2-ALPHA-912,2025-07-14,ALPHA,Normal
+Essential Medicine X,BCH-Q4-ALPHA-943,2025-09-05,ALPHA,Normal
+CardioCare Plus,CCP-ALPHA-2024-799,2024-04-25,ALPHA,Normal
+ImmunoBoost 500mg,IB-500-400,2023-06-21,N/A,Normal
+ImmunoBoost 500mg,IB-500-731,2023-02-28,N/A,Normal
+ImmunoBoost 500mg,IB-500-398,2024-12-27,N/A,Normal
+ImmunoBoost 500mg,IB-500-323,2023-07-25,N/A,Normal
+Essential Medicine X,BCH-Q2-DELTA-925,2025-07-25,DELTA,Normal
+CardioCare Plus,CCP-OMEGA-2025-988,2025-09-08,OMEGA,Normal
+ImmunoBoost 500mg,IB-500-836,2025-03-18,N/A,Normal
+Essential Medicine X,BCH-Q3-ALPHA-180,2023-06-22,ALPHA,Normal
+CardioCare Plus,CCP-OMEGA-2024-820,2024-05-30,OMEGA,Normal
+ImmunoBoost 500mg,IB-500-728,2024-11-28,N/A,Normal
+CardioCare Plus,CCP-ALPHA-2025-593,2025-01-23,ALPHA,Normal
+CardioCare Plus,CCP-ALPHA-2025-199,2025-08-27,ALPHA,Normal
+CardioCare Plus,CCP-OMEGA-2025-355,2025-10-01,OMEGA,Normal
+ImmunoBoost 500mg,IB-500-120,2024-07-03,N/A,Normal
+CardioCare Plus,CCP-ALPHA-2024-519,2024-03-13,ALPHA,Normal
+Essential Medicine X,BCH-Q4-DELTA-527,2025-01-29,DELTA,Normal
+CardioCare Plus,CCP-OMEGA-2025-685,2025-04-10,OMEGA,Normal
+CardioCare Plus,CCP-ALPHA-2023-492,2023-01-27,ALPHA,Normal
+Essential Medicine X,BCH-Q4-ALPHA-822,2025-08-19,ALPHA,Normal
+CardioCare Plus,CCP-ALPHA-2025-737,2025-06-06,ALPHA,Normal
+CardioCare Plus,CCP-OMEGA-2024-302,2024-12-17,OMEGA,Normal
+ImmunoBoost 500mg,IB-500-170,2025-04-28,N/A,Normal
+CardioCare Plus,CCP-OMEGA-2025-402,2025-03-27,OMEGA,Normal
+CardioCare Plus,CCP-OMEGA-2025-793,2025-05-14,OMEGA,Normal
+ImmunoBoost 500mg,IB-500-833,2025-08-11,N/A,Normal
+ImmunoBoost 500mg,IB-500-795,2025-10-13,N/A,Normal
+ImmunoBoost 500mg,IB-500-341,2023-09-13,N/A,Normal
+CardioCare Plus,CCP-ALPHA-2023-447,2023-10-05,ALPHA,Normal
+CardioCare Plus,CCP-ALPHA-2025-434,2025-04-10,ALPHA,Normal
+CardioCare Plus,CCP-OMEGA-2024-596,2024-08-28,OMEGA,Normal
+ImmunoBoost 500mg,IB-500-300,2023-10-16,N/A,Normal
+ImmunoBoost 500mg,IB-500-610,2024-07-17,N/A,Normal
+CardioCare Plus,CCP-ALPHA-2025-567,2025-09-16,ALPHA,Normal
+ImmunoBoost 500mg,IB-500-869,2023-11-09,N/A,Normal
+CardioCare Plus,CCP-ALPHA-2023-175,2023-12-07,ALPHA,Normal
+ImmunoBoost 500mg,IB-500-762,2024-03-15,N/A,Normal
+Essential Medicine X,BCH-Q3-DELTA-577,2023-05-08,DELTA,Normal
+Essential Medicine X,BCH-Q3-GAMMA-914,2024-07-24,GAMMA,Normal
+CardioCare Plus,CCP-OMEGA-2023-759,2023-11-13,OMEGA,Normal
+Essential Medicine X,BCH-Q4-GAMMA-580,2024-05-23,GAMMA,Normal
+CardioCare Plus,CCP-ALPHA-2024-193,2024-11-04,ALPHA,Normal
+ImmunoBoost 500mg,IB-500-804,2024-01-23,N/A,Normal
+Essential Medicine X,BCH-Q1-DELTA-657,2023-08-18,DELTA,Normal
+ImmunoBoost 500mg,IB-500-841,2024-02-05,N/A,Normal
+CardioCare Plus,CCP-ALPHA-2024-248,2024-10-01,ALPHA,Normal
+ImmunoBoost 500mg,IB-500-817,2023-02-13,N/A,Normal
+ImmunoBoost 500mg,IB-500-280,2023-01-06,N/A,Normal
+ImmunoBoost 500mg,IB-500-704,2023-09-12,N/A,Normal
+Essential Medicine X,BCH-Q3-GAMMA-749,2024-10-29,GAMMA,Normal
+Essential Medicine X,BCH-Q1-DELTA-424,2023-09-20,DELTA,Normal
+CardioCare Plus,CCP-ALPHA-2023-639,2023-01-23,ALPHA,Normal
+CardioCare Plus,CCP-ALPHA-2025-741,2025-09-09,ALPHA,Normal
+ImmunoBoost 500mg,IB-500-873,2025-03-21,N/A,Normal
+CardioCare Plus,CCP-ALPHA-2024-348,2024-09-23,ALPHA,Normal
+CardioCare Plus,CCP-ALPHA-2024-323,2024-10-14,ALPHA,Normal
+ImmunoBoost 500mg,IB-500-492,2023-02-13,N/A,Normal
+Essential Medicine X,BCH-Q2-GAMMA-296,2024-09-30,GAMMA,Normal
+Essential Medicine X,BCH-Q3-DELTA-838,2024-07-21,DELTA,Normal
+CardioCare Plus,CCP-OMEGA-2024-585,2024-09-06,OMEGA,Normal
+Essential Medicine X,BCH-Q1-DELTA-320,2025-05-08,DELTA,Normal
+ImmunoBoost 500mg,IB-500-259,2025-09-05,N/A,Normal
+CardioCare Plus,CCP-ALPHA-2023-442,2023-03-09,ALPHA,Normal
+Essential Medicine X,BCH-Q1-ALPHA-355,2025-09-26,ALPHA,Normal
+CardioCare Plus,CCP-OMEGA-2023-606,2023-03-24,OMEGA,Normal
+CardioCare Plus,CCP-ALPHA-2024-261,2024-07-02,ALPHA,Normal
+Essential Medicine X,BCH-Q2-DELTA-603,2023-05-12,DELTA,Normal
+CardioCare Plus,CCP-OMEGA-2025-465,2025-07-16,OMEGA,Normal
+ImmunoBoost 500mg,IB-500-609,2024-12-26,N/A,Normal
+Essential Medicine X,BCH-Q3-GAMMA-807,2023-07-13,GAMMA,Normal
+CardioCare Plus,CCP-OMEGA-2025-276,2025-09-01,OMEGA,Normal
+CardioCare Plus,CCP-OMEGA-2025-848,2025-06-03,OMEGA,Normal
+ImmunoBoost 500mg,IB-500-422,2023-11-23,N/A,Normal
+CardioCare Plus,CCP-ALPHA-2024-779,2024-10-17,ALPHA,Normal
+CardioCare Plus,CCP-OMEGA-2023-115,2023-09-25,OMEGA,Normal
+CardioCare Plus,CCP-ALPHA-2024-274,2024-11-22,ALPHA,Normal
+ImmunoBoost 500mg,IB-500-897,2023-11-01,N/A,Normal
+CardioCare Plus,CCP-OMEGA-2023-394,2023-07-19,OMEGA,Normal
+Essential Medicine X,BCH-Q1-DELTA-186,2023-03-31,DELTA,Normal
+Essential Medicine X,BCH-Q4-GAMMA-464,2024-10-16,GAMMA,Normal
+CardioCare Plus,CCP-ALPHA-2023-225,2023-03-23,ALPHA,Normal
+Essential Medicine X,BCH-Q1-ALPHA-757,2024-02-12,ALPHA,Normal
+CardioCare Plus,CCP-ALPHA-2023-683,2023-08-20,ALPHA,Normal
+ImmunoBoost 500mg,IB-500-865,2024-04-25,N/A,Normal
+Essential Medicine X,BCH-Q3-DELTA-829,2025-07-30,DELTA,Normal
+ImmunoBoost 500mg,IB-500-707,2024-10-29,N/A,Normal
+Essential Medicine X,BCH-Q1-GAMMA-134,2024-01-01,GAMMA,Normal
+Essential Medicine X,BCH-Q1-DELTA-595,2024-05-28,DELTA,Normal
+ImmunoBoost 500mg,IB-500-720,2024-05-24,N/A,Normal
+Essential Medicine X,BCH-Q2-DELTA-149,2023-09-04,DELTA,Normal
+CardioCare Plus,CCP-OMEGA-2023-744,2023-09-11,OMEGA,Normal
+CardioCare Plus,CCP-OMEGA-2024-266,2024-06-18,OMEGA,Normal
+CardioCare Plus,CCP-ALPHA-2023-743,2023-07-14,ALPHA,Normal
+Essential Medicine X,BCH-Q1-DELTA-701,2023-01-12,DELTA,Normal
+Essential Medicine X,BCH-Q1-GAMMA-895,2023-05-02,GAMMA,Normal
+CardioCare Plus,CCP-ALPHA-2024-517,2024-09-18,ALPHA,Normal
+Essential Medicine X,BCH-Q3-ALPHA-707,2024-04-03,ALPHA,Normal
+ImmunoBoost 500mg,IB-500-571,2023-04-11,N/A,Normal
+Essential Medicine X,BCH-Q2-GAMMA-750,2024-01-03,GAMMA,Normal
+CardioCare Plus,CCP-OMEGA-2025-603,2025-08-20,OMEGA,Normal
+ImmunoBoost 500mg,IB-500-159,2025-08-14,N/A,Normal
+CardioCare Plus,CCP-ALPHA-2024-150,2024-02-28,ALPHA,Normal
+ImmunoBoost 500mg,IB-500-956,2025-01-31,N/A,Normal
+CardioCare Plus,CCP-ALPHA-2024-816,2024-04-11,ALPHA,Normal
+ImmunoBoost 500mg,IB-500-190,2024-12-31,N/A,Normal
+CardioCare Plus,CCP-ALPHA-2023-489,2023-06-01,ALPHA,Normal
+Essential Medicine X,BCH-Q4-ALPHA-456,2023-08-07,ALPHA,Normal
+CardioCare Plus,CCP-ALPHA-2025-254,2025-03-18,ALPHA,Normal
+ImmunoBoost 500mg,IB-500-944,2025-10-15,N/A,Normal
+ImmunoBoost 500mg,IB-500-979,2025-05-26,N/A,Normal
+ImmunoBoost 500mg,IB-500-509,2024-03-08,N/A,Normal
+CardioCare Plus,CCP-OMEGA-2025-388,2025-08-13,OMEGA,Normal
+ImmunoBoost 500mg,IB-500-770,2025-08-21,N/A,Normal
+Essential Medicine X,BCH-Q2-GAMMA-154,2023-05-11,GAMMA,Normal
+Essential Medicine X,BCH-Q3-ALPHA-339,2024-03-08,ALPHA,Normal
+CardioCare Plus,CCP-OMEGA-2024-517,2024-02-14,OMEGA,Normal
+Essential Medicine X,BCH-Q1-DELTA-459,2023-10-23,DELTA,Normal
+ImmunoBoost 500mg,IB-500-161,2025-01-09,N/A,Normal
+CardioCare Plus,CCP-ALPHA-2024-914,2024-07-29,ALPHA,Normal
+CardioCare Plus,CCP-ALPHA-2023-757,2023-12-01,ALPHA,Normal
+CardioCare Plus,CCP-OMEGA-2025-601,2025-10-20,OMEGA,Normal
+ImmunoBoost 500mg,IB-500-330,2023-06-09,N/A,Normal
+CardioCare Plus,CCP-ALPHA-2023-136,2023-10-16,ALPHA,Normal
+Essential Medicine X,BCH-Q1-GAMMA-381,2025-08-19,GAMMA,Normal
+ImmunoBoost 500mg,IB-500-142,2023-10-31,N/A,Normal
+CardioCare Plus,CCP-OMEGA-2024-855,2024-10-28,OMEGA,Normal
+CardioCare Plus,CCP-ALPHA-2024-390,2024-01-10,ALPHA,Normal
+Essential Medicine X,BCH-Q2-DELTA-352,2024-12-24,DELTA,Normal
+ImmunoBoost 500mg,IB-500-868,2025-03-20,N/A,Normal
+Essential Medicine X,BCH-Q2-GAMMA-701,2023-06-16,GAMMA,Normal
+Essential Medicine X,BCH-Q3-DELTA-999,2023-03-02,DELTA,Normal
+ImmunoBoost 500mg,IB-500-942,2024-11-28,N/A,Normal
+ImmunoBoost 500mg,IB-500-758,2023-11-13,N/A,Normal
+Essential Medicine X,BCH-Q3-GAMMA-131,2025-07-22,GAMMA,Normal
+ImmunoBoost 500mg,IB-500-908,2023-12-20,N/A,Normal
+CardioCare Plus,CCP-OMEGA-2023-597,2023-06-15,OMEGA,Normal
+CardioCare Plus,CCP-ALPHA-2025-374,2025-03-27,ALPHA,Normal
+CardioCare Plus,CCP-OMEGA-2024-229,2024-12-10,OMEGA,Normal
+CardioCare Plus,CCP-ALPHA-2024-283,2024-07-25,ALPHA,Normal
+ImmunoBoost 500mg,IB-500-583,2023-03-14,N/A,Normal
+Essential Medicine X,BCH-Q4-DELTA-829,2025-05-16,DELTA,Normal
+Essential Medicine X,BCH-Q2-GAMMA-937,2023-11-29,GAMMA,Normal
+CardioCare Plus,CCP-ALPHA-2023-353,2023-09-15,ALPHA,Normal
+ImmunoBoost 500mg,IB-500-718,2023-08-01,N/A,Normal
+CardioCare Plus,CCP-ALPHA-2024-547,2024-04-29,ALPHA,Normal
+CardioCare Plus,CCP-ALPHA-2024-552,2024-11-01,ALPHA,Normal
+CardioCare Plus,CCP-ALPHA-2023-585,2023-04-11,ALPHA,Normal
+Essential Medicine X,BCH-Q3-ALPHA-144,2024-09-10,ALPHA,Normal
+CardioCare Plus,CCP-ALPHA-2023-966,2023-07-12,ALPHA,Normal
+CardioCare Plus,CCP-OMEGA-2024-352,2024-06-28,OMEGA,Normal
+Essential Medicine X,BCH-Q2-DELTA-838,2025-01-20,DELTA,Normal
+ImmunoBoost 500mg,IB-500-637,2024-03-01,N/A,Normal
+Essential Medicine X,BCH-Q4-GAMMA-520,2025-04-21,GAMMA,Normal
+ImmunoBoost 500mg,IB-500-927,2024-11-06,N/A,Normal
+ImmunoBoost 500mg,IB-500-365,2025-01-09,N/A,Normal
+ImmunoBoost 500mg,IB-500-391,2025-02-20,N/A,Normal
+Essential Medicine X,BCH-Q3-GAMMA-913,2024-01-30,GAMMA,Normal
+ImmunoBoost 500mg,IB-500-448,2024-09-11,N/A,Normal
+CardioCare Plus,CCP-ALPHA-2024-729,2024-06-12,ALPHA,Normal
+ImmunoBoost 500mg,IB-500-197,2024-12-10,N/A,Normal
+ImmunoBoost 500mg,IB-500-183,2023-06-06,N/A,Normal
+ImmunoBoost 500mg,IB-500-177,2024-10-16,N/A,Normal
+CardioCare Plus,CCP-OMEGA-2023-160,2023-07-12,OMEGA,Normal
+Essential Medicine X,BCH-Q2-ALPHA-184,2025-06-30,ALPHA,Normal
+ImmunoBoost 500mg,IB-500-306,2025-09-03,N/A,Normal
+Essential Medicine X,BCH-Q4-GAMMA-839,2025-06-16,GAMMA,Normal
+ImmunoBoost 500mg,IB-500-971,2024-02-19,N/A,Normal
+Essential Medicine X,BCH-Q4-GAMMA-230,2024-07-02,GAMMA,Normal
+Essential Medicine X,BCH-Q1-ALPHA-935,2023-01-09,ALPHA,Normal
+Essential Medicine X,BCH-Q2-ALPHA-845,2023-07-05,ALPHA,Normal
+Essential Medicine X,BCH-Q3-DELTA-858,2025-10-03,DELTA,Normal
+CardioCare Plus,CCP-OMEGA-2025-648,2025-07-30,OMEGA,Normal
+CardioCare Plus,CCP-ALPHA-2024-876,2024-08-07,ALPHA,Normal
+Essential Medicine X,BCH-Q1-ALPHA-985,2024-11-11,ALPHA,Normal
+Essential Medicine X,BCH-Q1-ALPHA-621,2024-05-16,ALPHA,Normal
+CardioCare Plus,CCP-ALPHA-2025-830,2025-03-21,ALPHA,Normal
+CardioCare Plus,CCP-OMEGA-2024-963,2024-09-24,OMEGA,Normal
+Essential Medicine X,BCH-Q3-DELTA-239,2024-01-18,DELTA,Normal
+CardioCare Plus,CCP-OMEGA-2024-700,2024-11-18,OMEGA,Normal
+ImmunoBoost 500mg,IB-500-442,2024-04-01,N/A,Normal
+ImmunoBoost 500mg,IB-500-303,2023-09-13,N/A,Normal
+CardioCare Plus,CCP-OMEGA-2023-185,2023-06-30,OMEGA,Normal
+ImmunoBoost 500mg,IB-500-367,2023-09-06,N/A,Normal
+CardioCare Plus,CCP-OMEGA-2024-992,2024-11-20,OMEGA,Normal
+ImmunoBoost 500mg,IB-500-123,2025-07-15,N/A,Normal
+Essential Medicine X,BCH-Q3-GAMMA-958,2024-12-02,GAMMA,Normal
+ImmunoBoost 500mg,IB-500-905,2025-05-29,N/A,Normal
+Essential Medicine X,BCH-Q2-DELTA-284,2023-01-16,DELTA,Normal
+ImmunoBoost 500mg,IB-500-405,2025-07-22,N/A,Normal
+ImmunoBoost 500mg,IB-500-369,2025-05-13,N/A,Normal
+Essential Medicine X,BCH-Q2-DELTA-272,2025-06-17,DELTA,Normal
+Essential Medicine X,BCH-Q1-ALPHA-613,2024-06-12,ALPHA,Normal
+Essential Medicine X,BCH-Q2-GAMMA-353,2023-06-27,GAMMA,Normal
+CardioCare Plus,CCP-OMEGA-2023-678,2023-09-21,OMEGA,Normal
+Essential Medicine X,BCH-Q2-DELTA-283,2024-03-01,DELTA,Normal
+CardioCare Plus,CCP-ALPHA-2024-865,2024-04-09,ALPHA,Normal
+ImmunoBoost 500mg,IB-500-239,2023-08-01,N/A,Normal
+ImmunoBoost 500mg,IB-500-685,2023-05-22,N/A,Normal
+ImmunoBoost 500mg,IB-500-874,2023-12-15,N/A,Normal
+ImmunoBoost 500mg,IB-500-444,2025-03-07,N/A,Normal
+CardioCare Plus,CCP-OMEGA-2025-394,2025-05-26,OMEGA,Normal
+`;
