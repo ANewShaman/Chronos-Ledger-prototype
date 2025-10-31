@@ -53,6 +53,7 @@ The system's integrity relies on a three-step verification process:
     > Auditor initiates an audit $\rightarrow$ **Gemini API** checks data consistency across Firestore (metadata) and the blockchain (hashes) $\rightarrow$ Anomalies or inconsistencies are flagged and reported.
 
 All non-verification-critical interactions are logged in **Firestore**, while the core trust validation and ownership chain remain on the **Ethereum blockchain**.
+![Chronos Ledger System Diagram](./UMLDiagram.png)
 
 ---
 
