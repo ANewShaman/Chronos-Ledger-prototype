@@ -2,6 +2,7 @@
 
 // FIX: Use modular imports for Firebase v9+ SDK.
 // FIX: Corrected Firebase v9+ SDK imports. Replaced the incorrect namespace import for 'firebase/app' with named imports.
+//Idk how I mess this up every time.
 import { initializeApp, getApp, getApps } from 'firebase/app';
 import {
   getFirestore,
@@ -18,7 +19,7 @@ import {
 import { getAuth, signInAnonymously, onAuthStateChanged, type User } from 'firebase/auth';
 import type { Product, Report, AuditTrail } from '../types';
 
-// IMPORTANT: Replace with your actual Firebase configuration from your Firebase project console.
+// CONFIGURE FIREBASE
 const firebaseConfig = {
   apiKey: "AIzaSyA45tSeT-p1cnwiKMMiL2tes-WHdKhJTms",
   authDomain: "dtriplemvp.firebaseapp.com",
@@ -29,7 +30,6 @@ const firebaseConfig = {
   measurementId: "G-7VGSV1PHL2"
 };
 
-// Initialize Firebase only if it hasn't been initialized yet
 // FIX: Call the imported functions directly instead of through a namespace.
 // FIX: Corrected Firebase v9+ app initialization to use imported functions directly. This is expected to fix module resolution errors for other Firebase services.
 const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApp();

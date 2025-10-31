@@ -69,7 +69,7 @@ export const AdminView: React.FC<AdminViewProps> = ({ isReady, userId, updateSta
     } catch (error: any) {
       console.error('Registration Error:', error);
 
-      // 🩵 Clean, user-friendly error messages:
+      // user-friendly error messages
       let message = 'An unknown error occurred.';
       if (error?.reason?.includes('Hash already registered')) {
         message = '⚠️ Hash already exists! Please try again with a new file.';

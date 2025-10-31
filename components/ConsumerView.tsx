@@ -4,7 +4,7 @@ import { isHashRegisteredOnChain } from '../services/blockchainService';
 import type { Status, Product } from '../types';
 import type { Contract } from 'ethers';
 import { Html5Qrcode } from 'html5-qrcode';
-import jsQR from 'jsqr'; // ✅ Added for decoding uploaded QR images
+import jsQR from 'jsqr'; // Decoding uploaded QR images. NOT WORKING
 
 type VerificationStatus = 'Authentic' | 'Warning' | 'NotFound' | 'Critical';
 type VerificationResult = {
@@ -137,7 +137,7 @@ export const ConsumerView: React.FC<ConsumerViewProps> = ({
 
     setIsLoading(true);
     setVerificationResult(null);
-    updateStatus('🔍 Checking Firestore...', 'info');
+    updateStatus('Checking Firestore...', 'info');
 
     try {
       const product = await verifyProduct(id);
@@ -221,7 +221,7 @@ export const ConsumerView: React.FC<ConsumerViewProps> = ({
     const file = e.target.files?.[0];
     if (!file) return;
 
-    updateStatus('📷 Reading QR from image...', 'info');
+    updateStatus('Reading QR from image...', 'info');
 
     const reader = new FileReader();
     reader.onload = async () => {

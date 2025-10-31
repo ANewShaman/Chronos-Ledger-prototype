@@ -16,3 +16,4 @@ declare global {
     Html5Qrcode: any;
   }
 }
+//Need to change :D

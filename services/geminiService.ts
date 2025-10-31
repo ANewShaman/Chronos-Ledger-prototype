@@ -2,7 +2,7 @@ import { GoogleGenAI, Type } from "@google/genai";
 import type { AIAuditResult } from '../types';
 import { historicalCsvData } from '../data/historicalData';
 
-// The API key must be available in the environment variables.
+
 const ai = new GoogleGenAI({ apiKey: process.env.API_KEY! });
 
 const auditSchema = {

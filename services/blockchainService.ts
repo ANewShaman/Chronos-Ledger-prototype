@@ -3,7 +3,7 @@ import { CONTRACT_ABI } from "./contractABI";
 
 // --- BLOCKCHAIN INTEGRATION DETAILS ---
 const CONTRACT_ADDRESS = "0x7De200c52a1cbd8156CDbebb6b322e036D3d5838"; // Sepolia contract address
-const SEPOLIA_CHAIN_ID = "0xaa36a7"; // Hex chain ID for Sepolia
+const SEPOLIA_CHAIN_ID = "0xaa36a7"; // Hex chain ID for Sepolia!!!
 
 export const connectWallet = async (): Promise<{
   provider: BrowserProvider;
@@ -17,7 +17,7 @@ export const connectWallet = async (): Promise<{
 
   const provider = new ethers.BrowserProvider(window.ethereum);
 
-  // ✅ Ensure MetaMask is on Sepolia BEFORE connecting
+  // Ensure MetaMask is on Sepolia !!BEFORE!! connecting
   const currentNetwork = await provider.getNetwork();
   if (currentNetwork.chainId !== 11155111n) {
     try {
@@ -25,7 +25,7 @@ export const connectWallet = async (): Promise<{
         method: "wallet_switchEthereumChain",
         params: [{ chainId: SEPOLIA_CHAIN_ID }],
       });
-      console.log("🔁 Switched to Sepolia network");
+      console.log("Switched to Sepolia network");
     } catch (switchError: any) {
       if (switchError.code === 4902) {
         // If Sepolia isn’t added yet

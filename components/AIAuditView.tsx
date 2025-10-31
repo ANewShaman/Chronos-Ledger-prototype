@@ -14,7 +14,7 @@ export const AIAuditView: React.FC<AIAuditViewProps> = ({ updateStatus, walletAd
   const [isAuditing, setIsLoading] = useState(false);
   const [auditResult, setAuditResult] = useState<AIAuditResult | null>(null);
 
-  // State for Product History Search
+  // State for Product History Search UNDER CONSTRUCTION!!!!!!!!!
   const [auditProductId, setAuditProductId] = useState('');
   const [isSearching, setIsSearching] = useState(false);
   const [auditTrail, setAuditTrail] = useState<AuditTrail | null>(null);
