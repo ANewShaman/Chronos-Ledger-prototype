@@ -141,21 +141,38 @@ export const AIAuditView: React.FC<AIAuditViewProps> = ({ updateStatus, walletAd
         </p>
       
         <div className="flex flex-col sm:flex-row sm:space-x-2 space-y-2 sm:space-y-0">
-          <input
-            type="file"
-            accept=".csv"
-            onChange={handleFileChange}
-            className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100 disabled:opacity-50"
-            disabled={isAuditing}
-          />
-          <button
-            onClick={handleRunAudit}
-            disabled={!file || isAuditing}
-            className="w-full sm:w-auto px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:bg-gray-400 disabled:cursor-not-allowed"
-          >
-            {isAuditing ? 'Auditing...' : 'Run AI Audit'}
-          </button>
-        </div>
+  <input
+    type="file"
+    accept=".csv"
+    onChange={handleFileChange}
+    className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100 disabled:opacity-50"
+    disabled={isAuditing}
+  />
+  <button
+    onClick={handleRunAudit}
+    disabled={!file || isAuditing}
+    className="w-full sm:w-auto px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:bg-gray-400 disabled:cursor-not-allowed"
+  >
+    {isAuditing ? 'Auditing...' : 'Run AI Audit'}
+  </button>
+
+  {/* TEMPORARY DIAGNOSIS BUTTON */}
+  <button
+    onClick={() => {
+      const mockResults = [
+        { productName: "PainRelief Gel", batchId: "PRG-2025-01", isCompliant: true, reason: "" },
+        { productName: "Omega3 Capsules", batchId: "OMG-4521", isCompliant: false, reason: "Label mismatch - expiry not visible" },
+        { productName: "Vitamin D3 Drops", batchId: "VD3-8820", isCompliant: true, reason: "" },
+      ];
+      setAuditResult(mockResults);
+      updateStatus("⚙️ Mock AI Detection: Temporary diagnosis generated.", "info", 3000);
+    }}
+    className="w-full sm:w-auto px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-indigo-700 bg-indigo-100 hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+  >
+    Run Mock Diagnosis
+  </button>
+</div>
+
 
         {auditResult && auditSummary && (
           <div className="mt-6 space-y-4">

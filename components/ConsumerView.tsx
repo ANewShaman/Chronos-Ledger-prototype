@@ -4,6 +4,7 @@ import { isHashRegisteredOnChain } from '../services/blockchainService';
 import type { Status, Product } from '../types';
 import type { Contract } from 'ethers';
 import { Html5Qrcode } from 'html5-qrcode';
+import jsQR from 'jsqr'; // ✅ Added for decoding uploaded QR images
 
 type VerificationStatus = 'Authentic' | 'Warning' | 'NotFound' | 'Critical';
 type VerificationResult = {
@@ -22,8 +23,9 @@ interface ConsumerViewProps {
   userId: string | null;
 }
 
-/* ResultCard kept inside same file for convenience.
-   If you have a separate ResultCard component, you can remove this block and import it. */
+/* -----------------------------------------------
+   ResultCard Component
+----------------------------------------------- */
 const ResultCard: React.FC<{ 
   result: VerificationResult | null, 
   userId: string | null,
@@ -109,7 +111,9 @@ const ResultCard: React.FC<{
   );
 };
 
-
+/* -----------------------------------------------
+   ConsumerView Component
+----------------------------------------------- */
 export const ConsumerView: React.FC<ConsumerViewProps> = ({
   isReady,
   updateStatus,
@@ -123,6 +127,7 @@ export const ConsumerView: React.FC<ConsumerViewProps> = ({
   const [isScanning, setIsScanning] = useState(false);
   const qrReaderRef = useRef<Html5Qrcode | null>(null);
 
+  /* ---------- Core Verification Function ---------- */
   const handleVerify = useCallback(async (idToVerify: string) => {
     const id = idToVerify.trim();
     if (!id) {
@@ -135,7 +140,7 @@ export const ConsumerView: React.FC<ConsumerViewProps> = ({
     updateStatus('🔍 Checking Firestore...', 'info');
 
     try {
-      const product = await verifyProduct(id); // your firebase service should return product object or null
+      const product = await verifyProduct(id);
       if (!product) {
         setVerificationResult({ product: {}, status: 'NotFound', id, onChainStatus: 'Not Found' });
         updateStatus('Product not found.', 'error', 4000);
@@ -163,6 +168,7 @@ export const ConsumerView: React.FC<ConsumerViewProps> = ({
     }
   }, [readOnlyContract, setVerificationResult, updateStatus]);
 
+  /* ---------- QR Scanner ---------- */
   const stopScanner = useCallback(async () => {
     const reader = qrReaderRef.current;
     if (reader) {
@@ -178,7 +184,6 @@ export const ConsumerView: React.FC<ConsumerViewProps> = ({
   }, [updateStatus]);
 
   const startScanner = useCallback(async () => {
-    // Prevent double start
     if (qrReaderRef.current) {
       updateStatus('Scanner already running.', 'info', 1500);
       return;
@@ -193,45 +198,80 @@ export const ConsumerView: React.FC<ConsumerViewProps> = ({
         { facingMode: 'environment' },
         { fps: 10, qrbox: { width: 250, height: 250 } },
         (decodedText: string) => {
-          // When a code is scanned:
           void (async () => {
-            try {
-              await stopScanner(); // ensure scanner stops
-            } catch (e) {
-              /* ignore */
-            }
+            try { await stopScanner(); } catch {}
             setDocumentId(decodedText);
             updateStatus('QR Scanned!', 'success', 2000);
             await handleVerify(decodedText);
           })();
         },
-        // optional error callback - we ignore most non-fatal scan errors
-        (errorMessage: string) => {
-          // No-op or log minor scan failures
-          // console.debug('scan fail', errorMessage);
-        }
-      ); // <-- crucial closing of .start(...)
+        () => {}
+      );
       updateStatus('Scanner active. Point camera at code.', 'info', 2000);
     } catch (err) {
       console.error('Scanner start error:', err);
       updateStatus(`Scanner error: ${String(err)}`, 'error', 4000);
-      // ensure state consistent
       qrReaderRef.current = null;
       setIsScanning(false);
     }
   }, [handleVerify, stopScanner, updateStatus]);
 
-  // cleanup on unmount to avoid camera lock
+  /* ---------- QR Image Upload ---------- */
+  const handleImageUpload = useCallback(async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    updateStatus('📷 Reading QR from image...', 'info');
+
+    const reader = new FileReader();
+    reader.onload = async () => {
+      try {
+        const img = new Image();
+        img.src = reader.result as string;
+
+        img.onload = async () => {
+          const canvas = document.createElement('canvas');
+          const ctx = canvas.getContext('2d');
+          if (!ctx) {
+            updateStatus('❌ Canvas error: unable to read image.', 'error', 4000);
+            return;
+          }
+
+          canvas.width = img.width;
+          canvas.height = img.height;
+          ctx.drawImage(img, 0, 0);
+          const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+
+          const qrCode = jsQR(imageData.data, imageData.width, imageData.height);
+          if (qrCode && qrCode.data) {
+            const decodedText = qrCode.data.trim();
+            setDocumentId(decodedText);
+            updateStatus('✅ QR image decoded successfully!', 'success', 2000);
+            await handleVerify(decodedText);
+          } else {
+            updateStatus('❌ No QR code detected in the image.', 'error', 4000);
+          }
+        };
+      } catch (err) {
+        console.error('QR decode error:', err);
+        updateStatus('❌ Error decoding image.', 'error', 4000);
+      }
+    };
+
+    reader.readAsDataURL(file);
+  }, [handleVerify, updateStatus]);
+
+  /* ---------- Cleanup on unmount ---------- */
   useEffect(() => {
     return () => {
       if (qrReaderRef.current) {
-        // best-effort stop
         qrReaderRef.current.stop().catch(() => {});
         qrReaderRef.current = null;
       }
     };
   }, []);
 
+  /* ---------- Render ---------- */
   return (
     <div className="p-4 space-y-4">
       <div>
@@ -253,13 +293,19 @@ export const ConsumerView: React.FC<ConsumerViewProps> = ({
         </div>
       </div>
 
-      <div className="text-center">
+      <div className="text-center flex flex-col sm:flex-row sm:justify-center sm:space-x-4 space-y-2 sm:space-y-0">
         <button
           onClick={() => { if (isScanning) void stopScanner(); else void startScanner(); }}
           className="px-4 py-2 border rounded-md bg-white hover:bg-gray-50"
         >
           {isScanning ? 'Stop Scan' : 'Scan QR Code'}
         </button>
+
+        {/* Upload QR Image Button */}
+        <label className="px-4 py-2 border rounded-md bg-white hover:bg-gray-50 cursor-pointer">
+          Upload QR Image
+          <input type="file" accept="image/*" onChange={handleImageUpload} className="hidden" />
+        </label>
       </div>
 
       {isScanning && (
