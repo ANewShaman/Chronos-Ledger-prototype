@@ -66,10 +66,20 @@ export const AdminView: React.FC<AdminViewProps> = ({ isReady, userId, updateSta
       setProductName('');
       setBatchId('');
       setMfgDate('');
-    } catch (error) {
+    } catch (error: any) {
       console.error('Registration Error:', error);
-      const message = error instanceof Error ? error.message : 'An unknown error occurred.';
-      updateStatus(`❌ Registration Failed: ${message}`, 'error', 6000);
+
+      // 🩵 Clean, user-friendly error messages:
+      let message = 'An unknown error occurred.';
+      if (error?.reason?.includes('Hash already registered')) {
+        message = '⚠️ Hash already exists! Please try again with a new file.';
+      } else if (error?.code === 'NETWORK_ERROR') {
+        message = '⚠️ Network error — please check your connection or MetaMask network.';
+      } else if (error instanceof Error) {
+        message = error.message;
+      }
+
+      updateStatus(message, 'error', 6000);
     } finally {
       setIsLoading(false);
     }
