@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { doc, getDoc, onSnapshot } from 'firebase/firestore';
+import { doc, onSnapshot } from 'firebase/firestore';
 import { db } from '../../services/firebaseService';
 
 export function useProductData(productId?: string) {
@@ -9,10 +9,16 @@ export function useProductData(productId?: string) {
 
   useEffect(() => {
     if (!productId) return;
+
     setLoading(true);
-    try {
-      const ref = doc(db, 'products', productId);
-      const unsub = onSnapshot(ref, (snap) => {
+    setProduct(null);
+    setError(null);
+
+    const ref = doc(db, 'products', productId);
+
+    const unsub = onSnapshot(
+      ref,
+      (snap) => {
         if (snap.exists()) {
           setProduct({ id: snap.id, ...snap.data() });
           setError(null);
@@ -21,15 +27,15 @@ export function useProductData(productId?: string) {
           setError('Product not found');
         }
         setLoading(false);
-      }, (err) => {
+      },
+      (err) => {
         setError(err?.message || String(err));
         setLoading(false);
-      });
-      return () => unsub();
-    } catch (err: any) {
-      setError(err?.message || String(err));
-      setLoading(false);
-    }
+      }
+    );
+
+    // Cleanup when component unmounts or productId changes
+    return () => unsub();
   }, [productId]);
 
   return { product, loading, error };

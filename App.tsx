@@ -81,7 +81,7 @@ const App: React.FC = () => {
 
   const handleConnectWallet = async () => {
     try {
-      updateStatus('🔌 Connecting to wallet...', 'info');
+      updateStatus(' Connecting to wallet...', 'info');
       const { provider, signer, contract, address } = await connectWallet();
       setWeb3State(prevState => ({...prevState, provider, signer, contract, address}));
       const shortAddress = `${address.substring(0, 6)}...${address.substring(address.length - 4)}`;

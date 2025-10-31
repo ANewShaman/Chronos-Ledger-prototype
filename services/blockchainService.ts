@@ -51,7 +51,7 @@ export const connectWallet = async (): Promise<{
     }
   }
 
-  // ✅ Now safely request account access and get signer
+  // Request account access and get signer
   await provider.send("eth_requestAccounts", []);
   const signer = await provider.getSigner();
   const address = await signer.getAddress();
@@ -79,7 +79,7 @@ export const registerHashOnChain = async (
   hash: string
 ): Promise<TransactionResponse> => {
   if (!contract) throw new Error("Contract is not initialized.");
-  console.log("📦 Registering hash on chain:", hash);
+  console.log("Registering hash on chain:", hash);
   const tx: TransactionResponse = await contract.registerHash(hash);
   console.log("✅ Transaction sent:", tx.hash);
   return tx;
